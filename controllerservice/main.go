@@ -1,31 +1,38 @@
 package main
 
 import (
-  "log"
-  "net"
-  "./models"
+  . "./models"
+  . ".."
 
-  "google.golang.org/grpc"
-  "google.golang.org/grpc/reflection"
   "code.cloudfoundry.org/goshims/filepathshim"
   "code.cloudfoundry.org/goshims/osshim"
-)
+  "log"
 
-const (
-  port = ":8999"
+  "google.golang.org/grpc"
+  "golang.org/x/net/context"
+  "fmt"
 )
 
 
 func main() {
-  lis, err := net.Listen("tcp", port)
+  address := "localhost:50051"
+  defaultName := "world"
+
+  // Set up a connection to the server.
+  conn, err := grpc.Dial(address, grpc.WithInsecure())
   if err != nil {
-    log.Fatalf("failed to listen: %v", err)
+    log.Fatalf("did not connect: %v", err)
   }
-  s := grpc.NewServer()
-  models.NewController(&osshim.OsShim{}, &filepathshim.FilepathShim{}, "mountPathPlaceholder")
-  // Register reflection service on gRPC server.
-  reflection.Register(s)
-  if err := s.Serve(lis); err != nil {
-    log.Fatalf("failed to serve: %v", err)
-  }
+  defer conn.Close()
+  c := NewController(&osshim.OsShim{}, &filepathshim.FilepathShim{}, "mountPathPlaceholder")
+
+  // Contact the server and print out its response.
+  volumeName := defaultName
+
+  c.CreateVolume(context.Background(), &CreateVolumeRequest{
+    Version: &Version{},
+    Name: &volumeName,
+    VolumeCapabilities: []*VolumeCapability{{Value: &VolumeCapability_Mount{}}},
+  })
+  fmt.Println("main running")
 }
