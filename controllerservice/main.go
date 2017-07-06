@@ -10,7 +10,6 @@ import (
 
   "google.golang.org/grpc"
   "golang.org/x/net/context"
-  "fmt"
 )
 
 
@@ -34,5 +33,4 @@ func main() {
     Name: &volumeName,
     VolumeCapabilities: []*VolumeCapability{{Value: &VolumeCapability_Mount{}}},
   })
-  fmt.Println("main running")
 }
