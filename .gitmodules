@@ -4,3 +4,6 @@
 [submodule "src/local-controller-plugin"]
 	path = src/local-controller-plugin
 	url = https://github.com/jeffpak/local-controller-plugin
+[submodule "src/github.com/golang/protobuf"]
+	path = src/github.com/golang/protobuf
+	url = https://github.com/golang/protobuf
