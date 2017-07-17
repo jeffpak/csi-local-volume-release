@@ -1,9 +1,3 @@
-[submodule "src/csi"]
-	path = src/csi
-	url = https://github.com/jeffpak/csi
-[submodule "src/local-controller-plugin"]
-	path = src/local-controller-plugin
-	url = https://github.com/jeffpak/local-controller-plugin
 [submodule "src/github.com/golang/protobuf"]
 	path = src/github.com/golang/protobuf
 	url = https://github.com/golang/protobuf
@@ -28,3 +22,9 @@
 [submodule "src/gopkg.in/yaml.v2"]
 	path = src/gopkg.in/yaml.v2
 	url = https://gopkg.in/yaml.v2
+[submodule "src/github.com/jeffpak/csi"]
+	path = src/github.com/jeffpak/csi
+	url = https://github.com/jeffpak/csi
+[submodule "src/github.com/jeffpak/local-controller-plugin"]
+	path = src/github.com/jeffpak/local-controller-plugin
+	url = https://github.com/jeffpak/local-controller-plugin
