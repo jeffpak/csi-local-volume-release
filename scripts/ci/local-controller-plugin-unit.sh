@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-et -e
+set -e
 
 cd csi-local-volume-release/
 
@@ -9,6 +9,8 @@ export PATH=$GOROOT/bin:$PATH
 
 export GOPATH=$PWD
 export PATH=$PWD/bin:$PATH
+
+go install github.com/onsi/ginkgo/ginkgo
 
 pushd src/github.com/jeffpak/local-controller-plugin
   ginkgo -r -keepGoing -p -trace -randomizeAllSpecs -progress --race "$@"
