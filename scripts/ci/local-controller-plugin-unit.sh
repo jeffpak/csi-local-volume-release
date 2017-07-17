@@ -1,6 +1,6 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
-set -e
+set -e -x
 
 cd csi-local-volume-release/
 
