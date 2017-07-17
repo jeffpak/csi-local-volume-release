@@ -1,0 +1,6 @@
+[submodule "src/csi"]
+	path = src/csi
+	url = https://github.com/jeffpak/csi
+[submodule "src/local-controller-plugin"]
+	path = src/local-controller-plugin
+	url = https://github.com/jeffpak/local-controller-plugin
