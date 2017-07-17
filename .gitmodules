@@ -28,3 +28,9 @@
 [submodule "src/github.com/jeffpak/local-controller-plugin"]
 	path = src/github.com/jeffpak/local-controller-plugin
 	url = https://github.com/jeffpak/local-controller-plugin
+[submodule "src/code.cloudfoundry.org/goshims"]
+	path = src/code.cloudfoundry.org/goshims
+	url = https://github.com/cloudfoundry/goshims
+[submodule "src/code.cloudfoundry.org/lager"]
+	path = src/code.cloudfoundry.org/lager
+	url = https://github.com/cloudfoundry/lager.git
