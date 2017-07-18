@@ -7,4 +7,4 @@ inputs:
 - name: csi-local-volume-release
 
 run:
-  path: csi-local-volume-release/scripts/run_csi_cert.sh
+  path: csi-local-volume-release/scripts/ci/local-controller-plugin-certification.sh
