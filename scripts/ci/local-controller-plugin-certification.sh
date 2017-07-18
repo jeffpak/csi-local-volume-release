@@ -3,7 +3,7 @@
 
 set -e
 
-cd local-volume-release/
+cd csi-local-volume-release/
 
 export GOROOT=/usr/local/go
 export PATH=$GOROOT/bin:$PATH
