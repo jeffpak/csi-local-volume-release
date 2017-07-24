@@ -3,6 +3,7 @@
 
 set -e
 
+cp csi-spec/created-csi-proto* csi-localvolume-release/src/github.com/jeffpak/csi
 cd csi-local-volume-release/
 
 export GOROOT=/usr/local/go
