@@ -17,7 +17,7 @@ go get -t github.com/paulcwarren/csi-cert
 export FIXTURE_FILENAME=$PWD/scripts/fixtures/local_plugin_cert.json
 /bin/bash scripts/start_controller_plugin_tcp.sh
 pushd src/github.com/paulcwarren/csi-cert
-    ginkgo
+    ginkgo -r -p
 popd
 /bin/bash scripts/stop_controller_plugin_tcp.sh
 
