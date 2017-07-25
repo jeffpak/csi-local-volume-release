@@ -2,6 +2,7 @@
 
 set -e -x
 
+./scripts/generate-csi-proto.sh
 cp csi-spec/csi* csi-localvolume-release/src/github.com/jeffpak/csi
 cd csi-local-volume-release/
 
