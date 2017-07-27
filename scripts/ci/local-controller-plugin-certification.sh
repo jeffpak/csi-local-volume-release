@@ -3,6 +3,10 @@
 
 set -e
 
+wget https://github.com/google/protobuf/releases/download/v3.3.0/protoc-3.3.0-linux-x86_64.zip
+unzip protoc-3.3.0-linux-x86_64.zip
+mv bin/protoc /usr/bin
+
 csi-local-volume-release/scripts/generate-csi-proto.sh
 cd csi-local-volume-release/
 
