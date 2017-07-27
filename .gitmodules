@@ -33,7 +33,14 @@
 	url = https://github.com/cloudfoundry/goshims
 [submodule "src/code.cloudfoundry.org/lager"]
 	path = src/code.cloudfoundry.org/lager
-	url = https://github.com/cloudfoundry/lager.git
+	url = https://github.com/cloudfoundry/lager
 [submodule "src/github.com/jeffpak/local-node-plugin"]
 	path = src/github.com/jeffpak/local-node-plugin
 	url = https://github.com/jeffpak/local-node-plugin
+[submodule "src/github.com/tedsuo/ifrit"]
+	path = src/github.com/tedsuo/ifrit
+	url = https://github.com/julian-hj/ifrit
+	branch = master
+[submodule "src/github.com/container-storage-interface/spec"]
+	path = src/github.com/container-storage-interface/spec
+	url = https://github.com/container-storage-interface/spec.git

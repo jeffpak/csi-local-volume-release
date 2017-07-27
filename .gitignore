@@ -1,1 +1,5 @@
 /pkg/
+/bin/
+src/github.com/codegangsta/
+src/github.com/nu7hatch/
+src/github.com/vito/
