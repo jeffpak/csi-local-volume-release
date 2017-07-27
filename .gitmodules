@@ -22,9 +22,6 @@
 [submodule "src/gopkg.in/yaml.v2"]
 	path = src/gopkg.in/yaml.v2
 	url = https://gopkg.in/yaml.v2
-[submodule "src/github.com/jeffpak/csi"]
-	path = src/github.com/jeffpak/csi
-	url = https://github.com/jeffpak/csi
 [submodule "src/github.com/jeffpak/local-controller-plugin"]
 	path = src/github.com/jeffpak/local-controller-plugin
 	url = https://github.com/jeffpak/local-controller-plugin
