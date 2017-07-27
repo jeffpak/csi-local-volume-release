@@ -5,7 +5,6 @@ rootfs_uri: docker:///cloudfoundry/inigo-ci
 
 inputs:
 - name: csi-local-volume-release
-- name: csi-spec
 
 run:
   path: csi-local-volume-release/scripts/ci/local-controller-plugin-certification.sh
