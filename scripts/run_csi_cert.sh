@@ -1,8 +1,11 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 cd `dirname $0`
+
+./generate-csi-proto.sh
+
 cd ..
 
 go build -o "$HOME/csi_local_controller" "src/github.com/jeffpak/local-controller-plugin/cmd/localcontrollerplugin/main.go"
