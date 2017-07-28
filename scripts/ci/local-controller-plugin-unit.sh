@@ -6,7 +6,6 @@ wget https://github.com/google/protobuf/releases/download/v3.3.0/protoc-3.3.0-li
 unzip protoc-3.3.0-linux-x86_64.zip
 mv bin/protoc /usr/bin
 
-csi-local-volume-release/scripts/generate-csi-proto.sh
 cd csi-local-volume-release/
 
 export GOROOT=/usr/local/go
@@ -14,6 +13,8 @@ export PATH=$GOROOT/bin:$PATH
 
 export GOPATH=$PWD
 export PATH=$PWD/bin:$PATH
+
+./scripts/generate-csi-proto.sh
 
 go install github.com/onsi/ginkgo/ginkgo
 
