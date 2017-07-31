@@ -23,7 +23,7 @@ go get -t github.com/paulcwarren/csi-cert
 function cleanup {
   cd $script_dir
   /bin/bash ./stop_controller_plugin_tcp.sh
-  /bin/bash ./stop_node_plugin.tcp.sh
+  /bin/bash ./stop_node_plugin_tcp.sh
   rm -rf $HOME/csi_plugins
 }
 
