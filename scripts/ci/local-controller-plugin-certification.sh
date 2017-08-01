@@ -42,6 +42,15 @@ export FIXTURE_FILENAME=${script_dir}/fixtures/local_plugin_cert.json
 trap cleanup EXIT
 /bin/bash scripts/start_controller_plugin_tcp.sh
 /bin/bash scripts/start_node_plugin_tcp.sh
-pushd ${work_dir}/csi-cert
-    ginkgo -r -p
+
+mkdir -p ${work_dir}/go/src/github.com/paulcwarren/
+
+pushd ${work_dir}/go
+  export GOROOT=/usr/local/go
+  export PATH=$GOROOT/bin:$PATH
+  export GOPATH=$PWD
+  export PATH=$PWD/bin:$PATH
+  ln -s ${work_dir}/csi-cert  src/github.com/paulcwarren/csi-cert
+  ./scripts/go_get_all_dep.sh
+  ginkgo -p
 popd
