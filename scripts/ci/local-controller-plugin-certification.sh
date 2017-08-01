@@ -51,6 +51,7 @@ pushd ${work_dir}/go
   export GOPATH=$PWD
   export PATH=$PWD/bin:$PATH
   ln -s ${work_dir}/csi-cert  src/github.com/paulcwarren/csi-cert
+  cd src/github.com/paulcwarren/csi-cert
   ./scripts/go_get_all_dep.sh
   ginkgo -p
 popd
