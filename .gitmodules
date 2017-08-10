@@ -40,7 +40,7 @@
 	branch = master
 [submodule "src/github.com/container-storage-interface/spec"]
 	path = src/github.com/container-storage-interface/spec
-	url = https://github.com/container-storage-interface/spec.git
+	url = https://github.com/paulcwarren/spec.git
 [submodule "src/github.com/pivotal-cf/brokerapi"]
 	path = src/github.com/pivotal-cf/brokerapi
 	url = https://github.com/pivotal-cf/brokerapi.git
@@ -59,3 +59,6 @@
 [submodule "src/code.cloudfoundry.org/csibroker"]
 	path = src/code.cloudfoundry.org/csibroker
 	url = https://github.com/cloudfoundry/csibroker.git
+[submodule "src/github.com/paulcwarren/spec"]
+	path = src/github.com/paulcwarren/spec
+	url = https://github.com/paulcwarren/spec.git
