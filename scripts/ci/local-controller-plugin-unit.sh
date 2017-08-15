@@ -14,8 +14,6 @@ export PATH=$GOROOT/bin:$PATH
 export GOPATH=$PWD
 export PATH=$PWD/bin:$PATH
 
-./scripts/generate-csi-proto.sh
-
 go install github.com/onsi/ginkgo/ginkgo
 
 pushd src/github.com/jeffpak/local-controller-plugin
