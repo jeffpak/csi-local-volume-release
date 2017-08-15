@@ -74,3 +74,6 @@
 [submodule "src/code.cloudfoundry.org/cflager"]
 	path = src/code.cloudfoundry.org/cflager
 	url = https://github.com/cloudfoundry/cflager
+[submodule "src/code.cloudfoundry.org/volman"]
+	path = src/code.cloudfoundry.org/volman
+	url = https://github.com/cloudfoundry/volman.git
