@@ -38,9 +38,6 @@
 	path = src/github.com/tedsuo/ifrit
 	url = https://github.com/tedsuo/ifrit.git
 	branch = master
-[submodule "src/github.com/container-storage-interface/spec"]
-	path = src/github.com/container-storage-interface/spec
-	url = https://github.com/paulcwarren/spec.git
 [submodule "src/github.com/pivotal-cf/brokerapi"]
 	path = src/github.com/pivotal-cf/brokerapi
 	url = https://github.com/pivotal-cf/brokerapi.git
