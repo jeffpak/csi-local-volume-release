@@ -8,4 +8,4 @@ inputs:
 - name: csi-cert
 
 run:
-  path: csi-local-volume-release/scripts/ci/local-controller-plugin-certification.sh
+  path: csi-local-volume-release/scripts/ci/csi-plugin-certification.sh

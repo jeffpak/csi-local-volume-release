@@ -12,6 +12,6 @@ export PATH=$PWD/bin:$PATH
 
 go install github.com/onsi/ginkgo/ginkgo
 
-pushd src/github.com/jeffpak/local-controller-plugin
+pushd src/github.com/jeffpak/local-node-plugin
   ginkgo -r -keepGoing -p -trace -randomizeAllSpecs -progress --race "$@"
 popd
