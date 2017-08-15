@@ -5,12 +5,6 @@ set -ex
 script_path=`realpath $0`
 script_dir=`dirname $script_path`
 
-cd $script_dir
-
-./generate-csi-proto.sh
-
-cd ..
-
 go build -o "$HOME/csi_local_controller" "src/github.com/jeffpak/local-controller-plugin/cmd/localcontrollerplugin/main.go"
 go build -o "$HOME/csi_local_node" "src/github.com/jeffpak/local-node-plugin/cmd/localnodeplugin/main.go"
 
