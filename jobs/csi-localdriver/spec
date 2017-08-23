@@ -1,0 +1,25 @@
+---
+name: csi-localdriver
+
+templates:
+  install.erb: bin/pre-start
+  ctl.erb: bin/csi_localdriver_ctl
+
+packages:
+- golang-csi-localdriver
+- csi_localdriver_pid_utils
+- csi-localdriver
+
+properties:
+  csi_localdriver.listen_addr:
+    description: "address csi localdriver listens on"
+    default: "0.0.0.0:9760"
+  csi_localdriver.plugin_path:
+    description: "path to place csi driver spec/json file for volman to discover"
+    default: "/var/vcap/data/csiplugins/csi-localdriver"
+  csi_localdriver.volumes_root:
+    description: "path to mount volumes into on the cell"
+    default: "/var/vcap/data/volumes/csi-localdriver-volumes"
+  csi_localdriver.log_level:
+    description: "localdriver log level"
+    default: "info"

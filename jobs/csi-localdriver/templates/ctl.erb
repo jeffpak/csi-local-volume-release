@@ -1,0 +1,54 @@
+#!/bin/bash
+
+set -e -x
+
+RUN_DIR=/var/vcap/sys/run/csi-localdriver
+LOG_DIR=/var/vcap/sys/log/csi-localdriver
+PIDFILE=$RUN_DIR/csi-localdriver.pid
+
+source /var/vcap/packages/csi_localdriver_pid_utils/pid_utils.sh
+
+case $1 in
+
+  start)
+    pid_guard $PIDFILE "csi-localdriver"
+
+    mkdir -p $RUN_DIR
+    chown -R vcap:vcap $RUN_DIR
+
+    mkdir -p $LOG_DIR
+    chown -R vcap:vcap $LOG_DIR
+
+    export GOMAXPROCS=$(nproc)
+
+    # Work around for GOLANG 1.5.3 DNS bug
+    export GODEBUG=netdns=cgo
+
+    echo $$ > $PIDFILE
+
+    # Allowed number of open file descriptors
+    ulimit -n 100000
+
+    # volume drivers need to create directories with 777 so container users can see them
+    umask 0
+    exec chpst -u vcap:vcap /var/vcap/packages/csi-localdriver/bin/localnodeplugin \
+      --listenAddr="<%= p("csi-localdriver.listen_addr") %>" \
+      --pluginsPath="<%= p("csi-localdriver.plugin_path") %>" \
+      --volumesRoot="<%= p("csi-localdriver.volumes_root") %>" \
+      --logLevel="<%= p("csi-localdriver.log_level") %>" \
+      2> >(tee -a $LOG_DIR/csi-localdriver.stderr.log | logger -p user.error -t vcap.csi-localdriver) \
+      1> >(tee -a $LOG_DIR/csi-localdriver.stdout.log | logger -p user.info -t vcap.csi-localdriver)
+
+    ;;
+
+  stop)
+    kill_and_wait $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: csi-localdriver_ctl {start|stop}"
+
+    ;;
+
+esac

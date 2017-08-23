@@ -1,5 +1,5 @@
 ---
-name: golang-localvolume
+name: golang-csi-localdriver
 
 files:
   - golang/go1.8.3.linux-amd64.tar.gz
