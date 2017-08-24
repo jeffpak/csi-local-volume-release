@@ -3,4 +3,4 @@ final_name: csi-local-volume
 blobstore:
   provider: s3
   options:
-    bucket_name: csi-local-volume-blobs
+    bucket_name: csi-local-volume-release-blobs
