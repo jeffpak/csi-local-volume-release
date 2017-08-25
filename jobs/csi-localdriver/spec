@@ -7,7 +7,7 @@ templates:
 
 packages:
 - golang-csi
-- csi_localdriver_pid_utils
+- csi-pid-utils
 - csi-localdriver
 
 properties:

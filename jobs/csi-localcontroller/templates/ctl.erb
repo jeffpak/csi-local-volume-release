@@ -6,7 +6,7 @@ RUN_DIR=/var/vcap/sys/run/csi-localcontroller
 LOG_DIR=/var/vcap/sys/log/csi-localcontroller
 PIDFILE=$RUN_DIR/csi_localcontroller.pid
 
-source /var/vcap/packages/csi_localdriver_pid_utils/pid_utils.sh
+source /var/vcap/packages/csi-pid-utils/pid_utils.sh
 
 case $1 in
 
