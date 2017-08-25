@@ -2,7 +2,7 @@
 name: csi-localdriver
 
 dependencies:
-- golang-csi-localdriver
+- golang-csi
 
 files:
   - code.cloudfoundry.org/cflager/*.go # gosub

@@ -5,7 +5,7 @@ templates:
   ctl.erb: bin/csi_localbroker_ctl
 
 packages:
-- golang-csi-localdriver
+- golang-csi
 - csi_localdriver_pid_utils
 - csibroker
 

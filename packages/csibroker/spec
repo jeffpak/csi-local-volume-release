@@ -2,7 +2,7 @@
 name: csibroker
 
 dependencies:
-- golang-csi-localdriver
+- golang-csi
 
 files:
   - code.cloudfoundry.org/clock/*.go # gosub
