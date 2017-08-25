@@ -1,0 +1,19 @@
+---
+name: csi-localcontroller
+
+templates:
+  install.erb: bin/pre-start
+  ctl.erb: bin/csi_localcontroller_ctl
+
+packages:
+- golang-csi-localdriver
+- csi_localdriver_pid_utils
+- csi-localcontroller
+
+properties:
+  csi_localcontroller.listen_addr:
+    description: "address csi localcontroller listens on"
+    default: "0.0.0.0:9860"
+  csi_localcontroller.log_level:
+    description: "localcontroller log level"
+    default: "info"
