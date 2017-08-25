@@ -2,7 +2,6 @@
 name: csi-localcontroller
 
 templates:
-  install.erb: bin/pre-start
   ctl.erb: bin/csi_localcontroller_ctl
 
 packages:
