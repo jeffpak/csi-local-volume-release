@@ -29,7 +29,7 @@ case $1 in
 
     echo $$ > $PIDFILE
 
-    exec chpst -u vcap:vcap /var/vcap/packages/csi-localbroker/bin/csi-localbroker \
+    exec chpst -u vcap:vcap /var/vcap/packages/csibroker/bin/csibroker \
       --listenAddr="<%= p("csi-localbroker.listen-addr") %>" \
       --csiConAddr="<%= p("csi-localbroker.csi-controller-addr") %>" \
       --serviceName="<%= p("csi-localbroker.service-name") %>" \
