@@ -1,0 +1,58 @@
+#!/bin/bash
+
+set -e -x
+
+RUN_DIR=/var/vcap/sys/run/csi-localbroker
+LOG_DIR=/var/vcap/sys/log/csi-localbroker
+PIDFILE=$RUN_DIR/csi-localbroker.pid
+
+source /var/vcap/packages/csi_localdriver_pid_utils/pid_utils.sh
+
+case $1 in
+
+  start)
+    pid_guard $PIDFILE "csi-localbroker"
+
+    mkdir -p $RUN_DIR
+    chown -R vcap:vcap $RUN_DIR
+
+    mkdir -p $LOG_DIR
+    chown -R vcap:vcap $LOG_DIR
+
+    mkdir -p "<%= p("csi-localbroker.data-dir") %>"
+    chown -R vcap:vcap "<%= p("csi-localbroker.data-dir") %>"
+
+    export GOMAXPROCS=$(nproc)
+
+    # Work around for go DNS bug (fix slated for v1.7)
+    export GODEBUG=netdns=cgo
+
+    echo $$ > $PIDFILE
+
+    exec chpst -u vcap:vcap /var/vcap/packages/csi-localbroker/bin/csi-localbroker \
+      --listenAddr="<%= p("csi-localbroker.listen-addr") %>" \
+      --csiConAddr="<%= p("csi-localbroker.csi-controller-addr") %>" \
+      --serviceName="<%= p("csi-localbroker.service-name") %>" \
+      --serviceId="<%= p("csi-localbroker.service-id") %>" \
+      --planName="<%= p("csi-localbroker.plan-name") %>" \
+      --planId="<%= p("csi-localbroker.plan-id") %>" \
+      --planDesc="<%= p("csi-localbroker.plan-desc") %>" \
+      --dataDir="<%= p("csi-localbroker.data-dir") %>" \
+      --username="<%= p("csi-localbroker.username") %>" \
+      --password="<%= p("csi-localbroker.password") %>" \
+      2> >(tee -a $LOG_DIR/csi-localbroker.stderr.log | logger -p user.error -t vcap.csi-localbroker) \
+      1> >(tee -a $LOG_DIR/csi-localbroker.stdout.log | logger -p user.info -t vcap.csi-localbroker)
+
+    ;;
+
+  stop)
+    kill_and_wait $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: csi_localbroker_ctl {start|stop}"
+
+    ;;
+
+esac
