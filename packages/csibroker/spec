@@ -1,0 +1,22 @@
+---
+name: csibroker
+
+dependencies:
+- golang-csi-localdriver
+
+files:
+  - code.cloudfoundry.org/clock/*.go # gosub
+  - code.cloudfoundry.org/debugserver/*.go # gosub
+  - code.cloudfoundry.org/goshims/osshim/*.go # gosub
+  - code.cloudfoundry.org/lager/*.go # gosub
+  - code.cloudfoundry.org/lager/lagerflags/*.go # gosub
+  - github.com/gorilla/mux/*.go # gosub
+  - github.com/jeffpak/csibroker/*.go # gosub
+  - github.com/jeffpak/csibroker/csibroker/*.go # gosub
+  - github.com/jeffpak/csibroker/utils/*.go # gosub
+  - github.com/pivotal-cf/brokerapi/*.go # gosub
+  - github.com/pivotal-cf/brokerapi/auth/*.go # gosub
+  - github.com/tedsuo/ifrit/*.go # gosub
+  - github.com/tedsuo/ifrit/grouper/*.go # gosub
+  - github.com/tedsuo/ifrit/http_server/*.go # gosub
+  - github.com/tedsuo/ifrit/sigmon/*.go # gosub

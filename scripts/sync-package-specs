@@ -36,7 +36,8 @@ function sync_package() {
   )
 }
 
-sync_package csi-localvolume    -app github.com/jeffpak/local-node-plugin/cmd/localnodeplugin
+sync_package csi-localdriver    -app github.com/jeffpak/local-node-plugin/cmd/localnodeplugin
+sync_package csibroker          -app github.com/jeffpak/csibroker
 
 wait
 
