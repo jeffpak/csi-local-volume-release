@@ -8,7 +8,7 @@ inputs:
   - name: csi-version
 
 outputs:
-  - name: created-csi-volume-release
+  - name: created-csi-local-volume-release
 
 params: []
 
