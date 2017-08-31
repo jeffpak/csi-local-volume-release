@@ -2,7 +2,7 @@
 
 set -x -e
 
-version=`cat csi-local-volume-version/number`
+version=`cat csi-version/number`
 pushd csi-local-volume-release
 
 rm -rf .final_builds
