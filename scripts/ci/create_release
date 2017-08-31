@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -x -e
+
+version=`cat csi-local-volume-version/number`
+pushd csi-local-volume-release
+
+rm -rf .final_builds
+
+bosh -n --parallel 10 create release --version $version --name csi-local-volume --force --with-tarball
+mv dev_releases/csi-local-volume/csi-local-volume-$version.tgz ../created-csi-local-volume-release/csi-volume-$version.tgz
+popd

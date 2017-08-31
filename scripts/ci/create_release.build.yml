@@ -1,0 +1,16 @@
+---
+platform: linux
+
+rootfs_uri: docker:///cloudfoundry/diego-pipeline
+
+inputs:
+  - name: csi-local-volume-release
+  - name: csi-version
+
+outputs:
+  - name: created-csi-volume-release
+
+params: []
+
+run:
+  path: csi-local-volume-release/scripts/ci/create_release
