@@ -32,11 +32,7 @@ case $1 in
     exec chpst -u vcap:vcap /var/vcap/packages/csibroker/bin/csibroker \
       --listenAddr="<%= p("csi-localbroker.listen-addr") %>" \
       --csiConAddr="<%= p("csi-localbroker.csi-controller-addr") %>" \
-      --serviceName="<%= p("csi-localbroker.service-name") %>" \
-      --serviceId="<%= p("csi-localbroker.service-id") %>" \
-      --planName="<%= p("csi-localbroker.plan-name") %>" \
-      --planId="<%= p("csi-localbroker.plan-id") %>" \
-      --planDesc="<%= p("csi-localbroker.plan-desc") %>" \
+      --serviceSpec="/var/vcap/jobs/csi-localbroker/config/service.json" \
       --dataDir="<%= p("csi-localbroker.data-dir") %>" \
       --username="<%= p("csi-localbroker.username") %>" \
       --password="<%= p("csi-localbroker.password") %>" \

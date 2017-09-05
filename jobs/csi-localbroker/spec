@@ -3,6 +3,7 @@ name: csi-localbroker
 
 templates:
   ctl.erb: bin/csi_localbroker_ctl
+  service.erb: config/service.json
 
 packages:
 - golang-csi
