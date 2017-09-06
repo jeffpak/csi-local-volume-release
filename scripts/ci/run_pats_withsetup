@@ -31,6 +31,17 @@ check_param BROKER_URL
 check_param BROKER_USER
 check_param BROKER_PASSWORD
 
+if [ -z "$CF_PASSWORD" ]; then
+    if [ -e "vars-store/deployment-vars.yml" ]; then
+        CF_PASSWORD=`grep cf_admin_password vars-store/deployment-vars.yml | awk  '{print $2}'`
+    fi
+fi
+if [ -z "$BROKER_PASSWORD" ]; then
+    if [ -e "vars-store/deployment-vars.yml" ]; then
+        BROKER_PASSWORD=`grep csi-localbroker-password vars-store/deployment-vars.yml | awk  '{print $2}'`
+    fi
+fi
+
 go get github.com/onsi/ginkgo/ginkgo
 
 ${scripts_path}/run-pats \
