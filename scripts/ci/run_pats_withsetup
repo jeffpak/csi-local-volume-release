@@ -22,14 +22,12 @@ base_path=$(absolute_path `dirname $0`)
 
 source ${scripts_path}/ci/utils.sh
 check_param CF_USERNAME
-check_param CF_PASSWORD
 check_param CF_API_ENDPOINT
 check_param APPS_DOMAIN
 check_param SERVICE_NAME
 check_param PLAN_NAME
 check_param BROKER_URL
 check_param BROKER_USER
-check_param BROKER_PASSWORD
 
 if [ -z "$CF_PASSWORD" ]; then
     if [ -e "vars-store/deployment-vars.yml" ]; then
