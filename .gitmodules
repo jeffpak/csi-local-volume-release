@@ -71,3 +71,6 @@
 [submodule "src/code.cloudfoundry.org/volman"]
 	path = src/code.cloudfoundry.org/volman
 	url = https://github.com/cloudfoundry/volman.git
+[submodule "src/code.cloudfoundry.org/persi-acceptance-tests"]
+	path = src/code.cloudfoundry.org/persi-acceptance-tests
+	url = https://github.com/cloudfoundry/persi-acceptance-tests
