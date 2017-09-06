@@ -41,6 +41,7 @@ if [ -z "$BROKER_PASSWORD" ]; then
 fi
 
 go get github.com/onsi/ginkgo/ginkgo
+go get code.cloudfoundry.org/persi-acceptance-tests
 
 ${scripts_path}/run-pats \
 ${CF_USERNAME} \
