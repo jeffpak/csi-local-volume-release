@@ -11,8 +11,8 @@ params:
   CF_USERNAME: replace-me
   CF_PASSWORD:
   BROKER_PASSWORD:
+  CREATE_CONFIG:
   CF_API_ENDPOINT: replace-me
   APPS_DOMAIN: replace-me
-  APPLICATION_PATH: replace-me
 run:
   path: csi-local-volume-release/scripts/ci/run_pats_withsetup
