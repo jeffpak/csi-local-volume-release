@@ -1,5 +1,0 @@
-check process csi-localbroker
-  with pidfile /var/vcap/sys/run/csi-localbroker/csi-localbroker.pid
-  start program "/var/vcap/jobs/csi-localbroker/bin/csi_localbroker_ctl start"
-  stop program "/var/vcap/jobs/csi-localbroker/bin/csi_localbroker_ctl stop"
-  group vcap

@@ -1,5 +1,0 @@
-check process csi-localdriver
-  with pidfile /var/vcap/sys/run/csi-localdriver/csi_localdriver.pid
-  start program "/var/vcap/jobs/csi-localdriver/bin/csi_localdriver_ctl start"
-  stop program "/var/vcap/jobs/csi-localdriver/bin/csi_localdriver_ctl stop"
-  group vcap

@@ -1,5 +1,0 @@
-check process csi-localcontroller
-  with pidfile /var/vcap/sys/run/csi-localcontroller/csi_localcontroller.pid
-  start program "/var/vcap/jobs/csi-localcontroller/bin/csi_localcontroller_ctl start"
-  stop program "/var/vcap/jobs/csi-localcontroller/bin/csi_localcontroller_ctl stop"
-  group vcap
